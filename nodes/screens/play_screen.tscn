@@ -2,11 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://busnej7d2v2db" path="res://nodes/screens/screen.tscn" id="1_j03cj"]
 [ext_resource type="Script" path="res://nodes/screens/play_screen.gd" id="2_n1lmw"]
-[ext_resource type="PackedScene" uid="uid://07jln80qp880" path="res://nodes/experiments/nodes_experiment.tscn" id="3_ag2fw"]
+[ext_resource type="PackedScene" uid="uid://c4y71qmhlt14w" path="res://nodes/experiments/tiles_experiment.tscn" id="3_g6wxg"]
 
 [node name="PlayScreen" instance=ExtResource("1_j03cj")]
 script = ExtResource("2_n1lmw")
-experiment_scene = ExtResource("3_ag2fw")
+experiment_scene = ExtResource("3_g6wxg")
 
 [node name="Center" type="CenterContainer" parent="." index="0"]
 offset_right = 1152.0

@@ -1,0 +1,90 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4y71qmhlt14w"]
+
+[ext_resource type="PackedScene" uid="uid://btui26x12wlbb" path="res://nodes/experiments/experiment.tscn" id="1_348f8"]
+[ext_resource type="Script" path="res://nodes/experiments/tiles_experiment.gd" id="2_nuk5o"]
+[ext_resource type="Texture2D" uid="uid://d2aq8iighgrfl" path="res://images/colored.png" id="3_mq678"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kyc83"]
+texture = ExtResource("3_mq678")
+separation = Vector2i(1, 1)
+18:0/0 = 0
+18:0/0/terrain_set = 0
+18:0/0/terrain = 0
+18:0/0/terrains_peering_bit/right_side = 0
+18:0/0/terrains_peering_bit/bottom_right_corner = 0
+18:0/0/terrains_peering_bit/bottom_side = 0
+19:0/0 = 0
+19:0/0/terrain_set = 0
+19:0/0/terrain = 0
+19:0/0/terrains_peering_bit/right_side = 0
+19:0/0/terrains_peering_bit/bottom_right_corner = 0
+19:0/0/terrains_peering_bit/bottom_side = 0
+19:0/0/terrains_peering_bit/bottom_left_corner = 0
+19:0/0/terrains_peering_bit/left_side = 0
+20:0/0 = 0
+20:0/0/terrain_set = 0
+20:0/0/terrain = 0
+20:0/0/terrains_peering_bit/bottom_side = 0
+20:0/0/terrains_peering_bit/bottom_left_corner = 0
+20:0/0/terrains_peering_bit/left_side = 0
+20:1/0 = 0
+20:1/0/terrain_set = 0
+20:1/0/terrain = 0
+20:1/0/terrains_peering_bit/bottom_side = 0
+20:1/0/terrains_peering_bit/bottom_left_corner = 0
+20:1/0/terrains_peering_bit/left_side = 0
+20:1/0/terrains_peering_bit/top_left_corner = 0
+20:1/0/terrains_peering_bit/top_side = 0
+19:1/0 = 0
+19:1/0/terrain_set = 0
+19:1/0/terrain = 0
+19:1/0/terrains_peering_bit/right_side = 0
+19:1/0/terrains_peering_bit/bottom_right_corner = 0
+19:1/0/terrains_peering_bit/bottom_side = 0
+19:1/0/terrains_peering_bit/bottom_left_corner = 0
+19:1/0/terrains_peering_bit/left_side = 0
+19:1/0/terrains_peering_bit/top_left_corner = 0
+19:1/0/terrains_peering_bit/top_side = 0
+19:1/0/terrains_peering_bit/top_right_corner = 0
+18:1/0 = 0
+18:1/0/terrain_set = 0
+18:1/0/terrain = 0
+18:1/0/terrains_peering_bit/right_side = 0
+18:1/0/terrains_peering_bit/bottom_right_corner = 0
+18:1/0/terrains_peering_bit/bottom_side = 0
+18:1/0/terrains_peering_bit/top_side = 0
+18:1/0/terrains_peering_bit/top_right_corner = 0
+18:2/0 = 0
+18:2/0/terrain_set = 0
+18:2/0/terrain = 0
+18:2/0/terrains_peering_bit/right_side = 0
+18:2/0/terrains_peering_bit/top_side = 0
+18:2/0/terrains_peering_bit/top_right_corner = 0
+19:2/0 = 0
+19:2/0/terrain_set = 0
+19:2/0/terrain = 0
+19:2/0/terrains_peering_bit/right_side = 0
+19:2/0/terrains_peering_bit/left_side = 0
+19:2/0/terrains_peering_bit/top_left_corner = 0
+19:2/0/terrains_peering_bit/top_side = 0
+19:2/0/terrains_peering_bit/top_right_corner = 0
+20:2/0 = 0
+20:2/0/terrain_set = 0
+20:2/0/terrain = 0
+20:2/0/terrains_peering_bit/left_side = 0
+20:2/0/terrains_peering_bit/top_left_corner = 0
+20:2/0/terrains_peering_bit/top_side = 0
+
+[sub_resource type="TileSet" id="TileSet_1huiu"]
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "walls"
+terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+sources/0 = SubResource("TileSetAtlasSource_kyc83")
+
+[node name="TilesExperiment" instance=ExtResource("1_348f8")]
+script = ExtResource("2_nuk5o")
+
+[node name="TileMap" type="TileMap" parent="." index="0"]
+tile_set = SubResource("TileSet_1huiu")
+format = 2
+layer_0/tile_data = PackedInt32Array(65537, 1310720, 2, 1, 1310720, 1, -65535, 1310720, 1, -131071, 1310720, 0, 65536, 1245184, 2, 0, 1245184, 1, -65536, 1245184, 1, -131072, 1245184, 0, 131071, 1245184, 2, 65535, 1245184, 1, -1, 1245184, 1, -65537, 1245184, 0, 131070, 1179648, 2, 65534, 1179648, 1, -2, 1179648, 1, -65538, 1179648, 0)
