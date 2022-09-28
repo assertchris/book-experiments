@@ -1,0 +1,139 @@
+[gd_scene load_steps=3 format=3 uid="uid://b42d6eoly7su2"]
+
+[ext_resource type="PackedScene" uid="uid://btui26x12wlbb" path="res://nodes/experiments/experiment.tscn" id="1_8wyvu"]
+[ext_resource type="Script" path="res://nodes/experiments/seed_experiment.gd" id="2_cfin5"]
+
+[node name="SeedExperiment" instance=ExtResource("1_8wyvu")]
+script = ExtResource("2_cfin5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="0"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+offset_right = 235.0
+offset_bottom = 31.0
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer" index="0"]
+layout_mode = 2
+offset_right = 140.0
+offset_bottom = 31.0
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer" index="1"]
+layout_mode = 2
+offset_left = 144.0
+offset_right = 235.0
+offset_bottom = 31.0
+text = "randomise"
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer" index="1"]
+layout_mode = 2
+offset_top = 35.0
+offset_right = 235.0
+offset_bottom = 123.0
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 5
+columns = 3
+
+[node name="Label1" type="Label" parent="VBoxContainer/GridContainer" index="0"]
+layout_mode = 2
+offset_right = 75.0
+offset_bottom = 26.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "number 1"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/GridContainer" index="1"]
+layout_mode = 2
+offset_left = 80.0
+offset_right = 155.0
+offset_bottom = 26.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "number 2"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer/GridContainer" index="2"]
+layout_mode = 2
+offset_left = 160.0
+offset_right = 235.0
+offset_bottom = 26.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "number 3
+"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="VBoxContainer/GridContainer" index="3"]
+layout_mode = 2
+offset_top = 31.0
+offset_right = 75.0
+offset_bottom = 57.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "number 4
+"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="VBoxContainer/GridContainer" index="4"]
+layout_mode = 2
+offset_left = 80.0
+offset_top = 31.0
+offset_right = 155.0
+offset_bottom = 57.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "number 5"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="VBoxContainer/GridContainer" index="5"]
+layout_mode = 2
+offset_left = 160.0
+offset_top = 31.0
+offset_right = 235.0
+offset_bottom = 57.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "number 6"
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="VBoxContainer/GridContainer" index="6"]
+layout_mode = 2
+offset_top = 62.0
+offset_right = 75.0
+offset_bottom = 88.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "number 7"
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="VBoxContainer/GridContainer" index="7"]
+layout_mode = 2
+offset_left = 80.0
+offset_top = 62.0
+offset_right = 155.0
+offset_bottom = 88.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "number 8"
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="VBoxContainer/GridContainer" index="8"]
+layout_mode = 2
+offset_left = 160.0
+offset_top = 62.0
+offset_right = 235.0
+offset_bottom = 88.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "number 9"
+horizontal_alignment = 1
+
+[connection signal="text_changed" from="VBoxContainer/HBoxContainer/LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Button" to="." method="_on_button_pressed"]
