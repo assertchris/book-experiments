@@ -30,3 +30,10 @@ config/name="Experiments"
 run/main_scene="res://nodes/screens/play_screen.tscn"
 config/features=PackedStringArray("4.0", "Vulkan Clustered")
 config/icon="res://images/icon.svg"
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=480
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
