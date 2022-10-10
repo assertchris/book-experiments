@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://d2x2imwv8k05g"]
+
+[ext_resource type="PackedScene" uid="uid://btui26x12wlbb" path="res://nodes/experiments/experiment.tscn" id="1_jk3qy"]
+[ext_resource type="Script" path="res://nodes/experiments/paths_experiment.gd" id="2_4ctmh"]
+[ext_resource type="PackedScene" uid="uid://v5iqxiyi1h2b" path="res://nodes/experiments/paths_experiment/connected_path_2d.tscn" id="3_cq1tg"]
+
+[sub_resource type="Curve2D" id="Curve2D_xuma2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -256, 0, 0, 0, 0, 0, 256, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_4iog7"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -448, -64, 0, 0, 0, 0, -448, -192)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_0k7js"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 192, -64, 0, 0, 0, 0, 192, -192)
+}
+point_count = 2
+
+[node name="PathsExperiment" instance=ExtResource("1_jk3qy")]
+script = ExtResource("2_4ctmh")
+
+[node name="ConnectedPath2D1" parent="." index="0" instance=ExtResource("3_cq1tg")]
+unique_name_in_owner = true
+curve = SubResource("Curve2D_xuma2")
+connected_paths = [NodePath("../ConnectedPath2D2"), NodePath("../ConnectedPath2D3")]
+
+[node name="PathFollow2d" type="PathFollow2D" parent="ConnectedPath2D1" index="0"]
+unique_name_in_owner = true
+position = Vector2(-256, 0)
+
+[node name="ColorRect" type="ColorRect" parent="ConnectedPath2D1/PathFollow2d" index="0"]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="ConnectedPath2D2" parent="." index="1" instance=ExtResource("3_cq1tg")]
+position = Vector2(256, 0)
+curve = SubResource("Curve2D_4iog7")
+connected_paths = [NodePath("../ConnectedPath2D1")]
+
+[node name="ConnectedPath2D3" parent="." index="2" instance=ExtResource("3_cq1tg")]
+curve = SubResource("Curve2D_0k7js")
+connected_paths = [NodePath("../ConnectedPath2D1")]

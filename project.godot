@@ -9,6 +9,11 @@
 config_version=5
 
 _global_script_classes=[{
+"base": "Path2D",
+"class": &"ConnectedPath2D",
+"language": &"GDScript",
+"path": "res://nodes/experiments/paths_experiment/connected_path_2d.gd"
+}, {
 "base": "Node2D",
 "class": &"GameExperiment",
 "language": &"GDScript",
@@ -20,6 +25,7 @@ _global_script_classes=[{
 "path": "res://nodes/screens/screen.gd"
 }]
 _global_script_class_icons={
+"ConnectedPath2D": "",
 "GameExperiment": "",
 "GameScreen": ""
 }
